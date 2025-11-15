@@ -5,6 +5,8 @@ This is a cryptocurrency price time series forecasting project, where the goal i
 
 This is a comprehensive dataset that captures the prices of a cryptocurrency along with the various features including social media attributes, trading attributes and time related attributes that were noted on an hourly basis during several months and that contribute directly or indirectly to the cryptocurrency volatile prices change.   
 
+The target value is the actual price. We have data extracted in an interval of 1h for a period of one year (from 1st of March 2020 to 1st of March 2021). We are interested to predict the values of cryptocurrency prices in specific timestamps that we have in the validation file.
+
 - **asset_id** : An asset ID. We refer to all supported cryptocurrencies as assets  
 - **open** : Open price for the time period  
 - **close** : Close price for the time period  
