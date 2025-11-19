@@ -85,3 +85,6 @@ The target value is the actual price. We have data extracted in an interval of 1
 
 
 ## Data Modelling
+
+
+![](Assets/results.png)
