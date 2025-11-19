@@ -1,6 +1,11 @@
 # Cryptocurrency-Closing-Price-Prediction
 This is a cryptocurrency price time series forecasting project, where the goal is to build a highly accurate model for hourly prices over a year. The model is enriched with qualitative data.
 
+## Table of Content
+- [Dataset](#Dataset)
+- [Data Analysis and feature engineering](#data-analysis-and-feature-engineering)
+- [Data Modelling](#data-modelling)
+
 ## Dataset
 
 This is a comprehensive dataset that captures the prices of a cryptocurrency along with the various features including social media attributes, trading attributes and time related attributes that were noted on an hourly basis during several months and that contribute directly or indirectly to the cryptocurrency volatile prices change.   
@@ -55,4 +60,27 @@ The target value is the actual price. We have data extracted in an interval of 1
 - **social_volume** : Number of social posts that contain relevant terms  
 - **price_btc** : Exchange rate with another coin  
 - **market_cap_global** : Total available supply multiplied by the current price in USD  
-- **percent_change_24h** : Percent change in price since 24 hours ago  
+- **percent_change_24h** : Percent change in price since 24 hours ago
+
+## Data exploration and Preprocessing
+
+
+- I first divided the variables into three categories based on their nature: **continuous**, **count**, and **ordinal** features. This classification allowed me to choose appropriate imputation strategies for handling missing values.
+
+- Afterward, I checked the column **`asset_id`**. The results showed that **all values in this column are equal to 1**, meaning it contains no variability and does not contribute any discriminative information to the model.  So I **removed it**
+
+- All rows with missing values in `close` were removed because it's the target column
+
+- The columns **`medium`** and **`youtube`** were dropped because these columns contained more than **60% missing values**, making them unsuitable for meaningful imputation.
+
+- **Continuous variables** were imputed using the **mean** and **Non-continuous variables**  were imputed using the **mode**.
+
+
+## Data Analysis and feature engineering
+
+* The histogram, kernel density plot, and boxplot for the features **“open”, “close”, “high”, and “low”** showed very similar distributions, indicating that these price-related variables follow nearly identical patterns.
+* The correlation matrix revealed that **“open”, “close”, “high”, and “low”** are highly correlated with each other (**1**), confirming their strong linear relationship.
+* Additional strong correlations were observed between **social_volume** and **tweet_sentiment4** (**0.86**), and between **tweet_followers** and **social_score** (**0.81**), suggesting strong interactions between these social-media-driven attributes.
+
+
+## Data Modelling
