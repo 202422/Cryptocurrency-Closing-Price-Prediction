@@ -3,6 +3,7 @@ This is a cryptocurrency price time series forecasting project, where the goal i
 
 ## Table of Content
 - [Dataset](#Dataset)
+- [Data exploration and Preprocessing](#data-exploration-and-preprocessing)
 - [Data Analysis and feature engineering](#data-analysis-and-feature-engineering)
 - [Data Modelling](#data-modelling)
 
